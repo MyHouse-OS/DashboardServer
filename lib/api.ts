@@ -12,6 +12,9 @@ export async function toggleLight() {
     method: "POST",
     headers: getHeaders(),
   });
+  if (!response.ok) {
+    throw new Error(`Failed to toggle light: ${response.status} ${response.statusText}`);
+  }
   return response.json();
 }
 
@@ -20,6 +23,9 @@ export async function toggleDoor() {
     method: "POST",
     headers: getHeaders(),
   });
+  if (!response.ok) {
+    throw new Error(`Failed to toggle door: ${response.status} ${response.statusText}`);
+  }
   return response.json();
 }
 
@@ -28,6 +34,9 @@ export async function toggleHeat() {
     method: "POST",
     headers: getHeaders(),
   });
+  if (!response.ok) {
+    throw new Error(`Failed to toggle heat: ${response.status} ${response.statusText}`);
+  }
   return response.json();
 }
 
